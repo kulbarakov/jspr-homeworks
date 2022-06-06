@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 // Stub
 public class PostRepository {
     private final ConcurrentHashMap<Long, Post> map = new ConcurrentHashMap<>();
-    private final AtomicLong counter = new AtomicLong(0);
+    private final AtomicLong counter = new AtomicLong(1);
 
     public List<Post> all() {
         return new ArrayList<>(map.values());
