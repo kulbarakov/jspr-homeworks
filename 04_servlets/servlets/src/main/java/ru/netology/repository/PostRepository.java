@@ -17,13 +17,17 @@ public class PostRepository {
     }
 
     public Optional<Post> getById(long id) {
-        return Optional.of(map.get(id));
+        var post = map.get(id);
+        if (post != null) return Optional.of(post);
+        else return Optional.empty();
     }
 
     public Post save(Post post) {
         long id = post.getId();
         if (id == 0) {
-            map.put(counter.getAndIncrement(), post);
+            long postId = counter.getAndIncrement();
+            post.setId(postId);
+            map.put(postId, post);
             return post;
         }
         if (map.containsKey(id)) {

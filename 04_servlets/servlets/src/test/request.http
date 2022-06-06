@@ -12,4 +12,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/posts/1
+DELETE http://localhost:8080/api/posts/2
